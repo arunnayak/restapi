@@ -35,7 +35,7 @@ app.use('/api/books', bookRouter);
 
 //message on the page when server starts
 app.get ('/', function (req, res){
-    res.send('Welcome to my API.')
+    res.send('Welcome to my API. <a href="/api/books">View JSON</a>')
 });
 
 //listen my app on port
