@@ -18,7 +18,6 @@ db = mongoose.connect ('mongodb://localhost/bookAPI');
 var Book = require('./models/bookModel');
 var Author = require('./models/authorModel');
 
-
 var app = express();
 
 var port = process.env.PORT || 3000;
@@ -31,7 +30,6 @@ app.use('/api/books', bookRouter);
 
 authorRouter = require('./Routes/authorRoutes')(Author);
 app.use('/api/authors', authorRouter);
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 //message on the page when server starts
