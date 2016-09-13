@@ -33,11 +33,14 @@ authorRouter = require('./Routes/authorRoutes')(Author);
 app.use('/api/authors', authorRouter);
 
 
+app.use(express.static(path.join(__dirname, 'public')));
 //message on the page when server starts
 app.get ('/', function (req, res){
     //res.send('Welcome to my API. <a href="/api/books">View JSON</a>')
     res.sendFile(path.join(__dirname + '/index.html'));
 });
+
+app.use("/node_modules", express.static(__dirname + '/node_modules'));
 
 //listen my app on port
 app.listen(port, function(){
